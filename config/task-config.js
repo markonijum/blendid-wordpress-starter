@@ -74,5 +74,10 @@ additionalTasks: {
     prebuild: [],
     postbuild: []
       }
+    },
+
+  imgsForSprite: {
+    folderName: 'imgSprite'
     }
+    
   }
