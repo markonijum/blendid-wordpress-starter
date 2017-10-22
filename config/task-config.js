@@ -5,7 +5,7 @@ module.exports = {
   html        : false,
   images      : true,
   fonts       : true,
-  static      : true,
+  static      : false,
   svgSprite   : true,
   ghPages     : false,
   stylesheets : true,
