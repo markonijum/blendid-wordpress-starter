@@ -33,6 +33,7 @@ module.exports = {
   stylesheets: {
     sass: {
       "includePaths": [
+        "./node_modules",
         "./node_modules/bourbon/app/assets/stylesheets",
         "./node_modules/bootstrap/scss",
         "./node_modules/slick-carousel/slick",
