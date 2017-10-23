@@ -9,6 +9,7 @@ module.exports = {
   svgSprite   : true,
   ghPages     : false,
   stylesheets : true,
+  php         : true,
 
   javascripts: {
     entry: {
@@ -65,6 +66,19 @@ additionalTasks: {
 
     require('../gulpfile/tasks/modernizr');
     require('../gulpfile/tasks/watchScss');
+    
+     if(TASK_CONFIG.php) {
+      var revReplace = require('gulp-rev-replace')
+      var path       = require('path')
+      
+      // 5) Update asset references in functions.php file
+      gulp.task('update-php', function(){
+        var manifest = gulp.src(path.resolve(process.env.PWD, PATH_CONFIG.dest, "rev-manifest.json"))
+        return gulp.src(path.resolve(process.env.PWD, 'functions.php'))
+          .pipe(revReplace({ manifest: manifest, replaceInExtensions:['.php'] }))
+          .pipe(gulp.dest(path.resolve(process.env.PWD, PATH_CONFIG.dest)))
+      })
+    }
 
   },
   development: {
