@@ -87,7 +87,7 @@ additionalTasks: {
   },
   production: {
     prebuild: [],
-    postbuild: []
+    postbuild: ['update-php']
       }
     },
 
